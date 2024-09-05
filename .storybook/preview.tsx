@@ -1,4 +1,5 @@
 import type { Preview } from "@storybook/react";
+import { NativeBaseProvider } from "native-base";
 
 const preview: Preview = {
   parameters: {
@@ -9,6 +10,13 @@ const preview: Preview = {
       },
     },
   },
+  decorators: [
+    (Story) => (
+      <NativeBaseProvider>
+        <Story />
+      </NativeBaseProvider>
+    ),
+  ],
 };
 
 export default preview;
