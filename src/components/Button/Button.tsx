@@ -8,7 +8,7 @@ export type MyButtonProps = {
 
 export const CustomButton = ({ onPress, text }: MyButtonProps) => {
   return (
-    <Button onPress={onPress}>
+    <Button onPress={onPress} backgroundColor={"black"}>
       <Text style={styles.text}>{text}</Text>
     </Button>
   );
