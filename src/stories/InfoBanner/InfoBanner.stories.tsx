@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { StyleSheet } from "react-native";
 import { Box, Text } from "native-base";
 import { InfoBanner } from "../../components/InfoBanner";
-
+import React from "react";
 const meta = {
   title: "Components/InfoBanner",
   component: InfoBanner,

@@ -1,6 +1,6 @@
 import { Button, IButtonProps, Text } from "native-base";
 import { StyleProp, ViewStyle, TextStyle } from "react-native";
-
+import React from "react";
 export type MyButtonProps = IButtonProps & {
   text: string;
   variant: "primary" | "secondary" | "tertiary";

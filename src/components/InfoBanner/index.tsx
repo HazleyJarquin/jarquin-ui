@@ -1,4 +1,5 @@
 import { Box, IBoxProps, Text } from "native-base";
+import React from "react";
 export type InfoBannerProps = IBoxProps & {
   variant: "primary" | "secondary" | "tertiary";
   children: React.ReactNode;

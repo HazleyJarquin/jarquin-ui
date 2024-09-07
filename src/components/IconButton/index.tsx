@@ -1,5 +1,5 @@
 import { IconButton as Ico, IIconButtonProps } from "native-base";
-
+import React from "react";
 export type Props = IIconButtonProps & {
   variant: "primary" | "secondary" | "tertiary";
 };

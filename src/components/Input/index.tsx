@@ -1,6 +1,6 @@
 import { Box, IInputProps, Input as NativeInput, Text } from "native-base";
 import { StyleProp, TextStyle } from "react-native";
-
+import React from "react";
 export type InputProps = IInputProps & {
   variant: "primary" | "secondary" | "tertiary";
   label?: string;
@@ -9,7 +9,7 @@ export type InputProps = IInputProps & {
 };
 export const Input = ({
   variant,
-  label = "hi",
+  label = "",
   labelStyle = {},
   asterisk = false,
   ...props

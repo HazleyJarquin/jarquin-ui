@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { StyleSheet } from "react-native";
 import { CustomButton } from "../../components/Button/Button";
 import { Box } from "native-base";
+import React from "react";
 
 const meta = {
   title: "Components/CustomButton",
