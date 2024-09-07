@@ -1,11 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { StyleSheet } from "react-native";
-import { CustomButton } from "../../components/Button/Button";
+
 import { Box } from "native-base";
+import { IconButton } from "../../components/IconButton";
 
 const meta = {
-  title: "Components/CustomButton",
-  component: CustomButton,
+  title: "Components/IconButton",
+  component: IconButton,
   decorators: [
     (Story) => (
       <Box style={styles.centered}>
@@ -13,7 +14,7 @@ const meta = {
       </Box>
     ),
   ],
-} satisfies Meta<typeof CustomButton>;
+} satisfies Meta<typeof IconButton>;
 
 export default meta;
 
@@ -21,10 +22,8 @@ type Story = StoryObj<typeof meta>;
 
 export const Content: Story = {
   args: {
-    text: "Press me",
     onPress: () => alert("Pressed"),
     variant: "tertiary",
-    textStyle: { color: "red" },
   },
   argTypes: {
     variant: {

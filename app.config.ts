@@ -25,6 +25,9 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   web: {
     favicon: "./assets/favicon.png",
   },
+
+  plugins: ["expo-font"],
+
   extra: {
     storybookEnable: process.env.STORYBOOK === "1",
   },

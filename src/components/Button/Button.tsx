@@ -1,19 +1,44 @@
-import { Button } from "native-base";
-import { TouchableOpacity, Text, StyleSheet } from "react-native";
+import { Button, IButtonProps, Text } from "native-base";
+import { StyleProp, ViewStyle, TextStyle } from "react-native";
 
-export type MyButtonProps = {
-  onPress: () => void;
+export type MyButtonProps = IButtonProps & {
   text: string;
+  variant: "primary" | "secondary" | "tertiary";
+  buttonStyle?: StyleProp<ViewStyle>;
+  textStyle?: StyleProp<TextStyle>;
 };
 
-export const CustomButton = ({ onPress, text }: MyButtonProps) => {
+export const CustomButton = ({
+  onPress,
+  text,
+  variant = "tertiary",
+  buttonStyle = {},
+  textStyle = {},
+  ...props
+}: MyButtonProps) => {
+  const backgroundColor =
+    variant === "primary"
+      ? "primary.500"
+      : variant === "secondary"
+      ? "none"
+      : variant === "tertiary"
+      ? "none"
+      : "";
+
+  const borderWidth = variant === "tertiary" ? 1 : 0;
+
+  const borderColor = variant === "tertiary" ? "text.hint" : "none";
+
   return (
-    <Button onPress={onPress} backgroundColor={"black"}>
-      <Text style={styles.text}>{text}</Text>
+    <Button
+      style={buttonStyle}
+      onPress={onPress}
+      backgroundColor={backgroundColor}
+      borderWidth={borderWidth}
+      borderColor={borderColor}
+      {...props}
+    >
+      <Text style={textStyle}>{text}</Text>
     </Button>
   );
 };
-
-const styles = StyleSheet.create({
-  text: { color: "white" },
-});

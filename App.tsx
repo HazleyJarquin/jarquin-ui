@@ -2,19 +2,21 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, View } from "react-native";
 import Constants from "expo-constants";
 import Storybook from "./.storybook";
-import { Button, NativeBaseProvider, Text } from "native-base";
+import { Box, Button, NativeBaseProvider, Text } from "native-base";
 import { customTheme } from "./src/theme";
 
 function App() {
   return (
     <NativeBaseProvider theme={customTheme}>
-      <View style={styles.container}>
-        <Text color="primary.900">
-          Open up App.tsx to start working on your app!
+      <Box style={styles.container}>
+        <Text style={styles.text} fontFamily="heading" fontSize="xl">
+          Este es un texto con la fuente ShamSans
         </Text>
-
-        <StatusBar style="auto" />
-      </View>
+        <Text fontFamily="body" fontSize="md">
+          Este es otro texto con la fuente ShamSans para el cuerpo
+        </Text>
+        <Button backgroundColor={"text.hint"}>Hi</Button>
+      </Box>
     </NativeBaseProvider>
   );
 }
@@ -26,5 +28,8 @@ const styles = StyleSheet.create({
     backgroundColor: "#000",
     alignItems: "center",
     justifyContent: "center",
+  },
+  text: {
+    color: "red",
   },
 });

@@ -1,6 +1,7 @@
 import type { Preview } from "@storybook/react";
 import { NativeBaseProvider } from "native-base";
 
+import { customTheme } from "../src/theme/index";
 const preview: Preview = {
   parameters: {
     controls: {
@@ -12,7 +13,7 @@ const preview: Preview = {
   },
   decorators: [
     (Story) => (
-      <NativeBaseProvider>
+      <NativeBaseProvider theme={customTheme}>
         <Story />
       </NativeBaseProvider>
     ),
